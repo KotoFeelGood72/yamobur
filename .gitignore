@@ -1,8 +1,8 @@
 node_modules/
 /node_modules
 .idea/
-build/
-dist/
+# build/
+# dist/
 source/
 test/
 .env
