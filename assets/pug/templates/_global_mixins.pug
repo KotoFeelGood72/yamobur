@@ -36,7 +36,6 @@ mixin scripts
 		|<script>window.jQuery || document.write('<script src="js/jquery-3.6.0.min.js"><\/script>')</script>
 
 	if TweenMax
-		|<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
 		|<script>window.TweenMax || document.write('<script src="js/gsap.min.js"><\/script>')</script>
 
 	if production_status === 'development'
@@ -44,7 +43,6 @@ mixin scripts
 			|window.productionStatus = 'development';
 	script(src="js/libs.js")
 	script(src='js/menu.js')
-	//- script(src="js/ScrollTrigger.min.js")
 	script(src='js/main.js')
 
 	+script_cdn([
@@ -54,7 +52,7 @@ mixin scripts
 //- scripts from cdn
 mixin script_cdn(array)
 	each item in array
-		script(src=item.link)
+		script(async src=item.link)
 
 
 //- //- form element v2

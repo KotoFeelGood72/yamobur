@@ -60,13 +60,19 @@ block content_block
 						})
 					ul.service_paralax_imgs
 						-for(i = 0; i < 7; i++)
-							- var srcParalax = 'i/home/stoune_' + i + '.png'
+							- var srcParalax = 'i/home/stoune_' + i
 								if i === 0
 									li.paralax_el.paralaxEl(data-ratio=`0.1`)
-										img(src=srcParalax, alt="")
+										+pic({
+											img: `${srcParalax}`,
+											png: true,
+										})
 								else 
 									li.paralax_el.paralaxEl(data-ratio=`0.${i}`)
-										img(src=srcParalax, alt="")
+										+pic({
+											img: `${srcParalax}`,
+											png: true,
+										})
 				ul.tootipe_list 
 					-for(i = 0; i < 4; i++)
 						li(class=`tooltipe_number${i}`).tolltipe_wrapper_item
