@@ -1,0 +1,100 @@
+
+.contacts_main_head {
+	margin-bottom: 8rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+}
+.contacts_list_info {
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+	li {
+		min-width: 20.3rem;
+		padding-left: 4.6rem;
+		position: relative;
+		@include bp($point_2) {
+			padding-left: 3rem;
+			margin-bottom: 2rem;
+		}
+		a {
+			transition: all .3s ease;
+			&:hover {
+				color: $orange;
+			}
+		}
+		&:not(:last-child) {
+			margin-right: 12rem;
+			@include bp($point_2) {
+				margin-right: 0;
+			}
+		}
+		&:nth-child(2) {
+			min-width: 27.7rem;
+			@include bp($point_2) {
+				min-width: 100%
+			}
+		}
+	}
+}
+
+.contacts_item_head {
+	@include flex-start;
+	align-items: flex-start;
+}
+.contacts_item_icon {
+	margin-right: 2rem;
+	color: $orange;
+	width: 2.6rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include bp($point_2) {
+		width: 2rem;
+		@include flex-center;
+	}
+}
+
+.contacts_item_label {
+	p {
+		font-size: 2.2rem;
+		font-family: $font_3;
+		margin-bottom: 1.5rem;
+		@include bp($point_2) {
+			font-size: 1.8rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+.contacts_social_list {
+	@include flex-start;
+	padding-left: 4.6rem;
+	@include bp($point_2) {
+		padding-left: 3rem;
+	}
+	li {
+		transition: all .3s ease;
+		&:hover {
+			transform: scale(1.2) rotate(15deg);
+			opacity: .7;
+		}
+		&:not(:last-child) {
+			margin-right: 2.5rem;
+		}
+	}
+}
+
+.contacts_main_body {
+	overflow: hidden;
+	border-radius: 3rem;
+	#map {
+		height: 63.1rem;
+		width: 100%;
+		@include bp($point_2) {
+			height: 40rem;
+		}
+	}
+}

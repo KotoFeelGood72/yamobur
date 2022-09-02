@@ -1,0 +1,23 @@
+header.header
+	.section_in
+			.header_main_row
+				.header_logo
+					a(href="/")
+						+pic({
+							png: true,
+							contain: true,
+							img: `i/global/logo`,
+							media: 1024,
+							img_mob: `i/global/logo_mobile`
+						})
+				nav.header_menu
+					ul.header_menu_list
+							each item in ['Главная', 'Каталог', 'Услуги', 'Доставка', 'О нас', 'Контакты']
+								li.header_menu_item
+									a(href="/")=item
+				.header_main_number
+					a(target="_blank" href="tel:+79319997700") +7 931-999-77-00
+				ul.header_burger_trigger 
+					li 
+					li 
+					li

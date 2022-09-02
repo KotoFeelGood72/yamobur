@@ -1,0 +1,23 @@
+.payment {
+}
+.section_in {
+}
+.payment_main {
+}
+.payment_list_content {
+	li {
+		h2 {
+			margin-bottom: 2rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 7rem;
+		}
+	}
+}
+.payment_item_txt {
+	p {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}

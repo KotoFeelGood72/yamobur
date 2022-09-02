@@ -1,0 +1,597 @@
+.about {
+	position: relative;
+}
+.section_in {
+}
+.about_main {
+	@include flex-start;
+	// position: relative;
+	margin-bottom: 7rem;
+}
+.about_content {
+	margin-right: 6.8rem;
+	max-width: 89.8rem;
+	@include bp($point_2) {
+		margin-right: 0;
+	}
+	p {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+.about_txt {
+}
+.about_img_w {
+	@include bp($point_2) {
+		display: none;
+	}
+
+	ul {
+		li {
+			position: absolute;
+			&:first-child {
+				right: 0;
+				top: -12.7rem;
+				width: 48.2rem;
+			}
+			&:nth-child(2) {
+				right: 38.1rem;
+				bottom: 0;
+				width: 34.5rem;
+			}
+		}
+	}
+}
+.cover_img {
+}
+.aboutService {
+}
+.aboutService_main {
+	margin-bottom: 14.7rem;
+	@include bp($point_2) {
+		margin-bottom: 8rem;
+	}
+
+	h2 {
+		margin-bottom: 7rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+.aboutService_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(43.7rem, 1fr));
+	grid-gap: 5rem 10.4rem;
+	counter-reset: item;
+	@include bp($point_2) {
+		grid-gap: 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+	li {
+		padding-left: 9.3rem;
+		position: relative;
+		@include bp($point_2) {
+			padding-left: 6rem;
+		}
+		&:before {
+			counter-increment: item;
+			content: "0" counter(item);
+			width: 6.3rem;
+			height: 6.3rem;
+			border-radius: 2rem;
+			background-color: $dark;
+			font-size: 2.2rem;
+			font-family: $font_3;
+			color: $white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include flex-center;
+			@include bp($point_2) {
+				font-size: 1.6rem;
+				width: 4rem;
+				height: 4rem;
+			}
+		}
+	}
+}
+.aboutService_item {
+}
+.about_service_content {
+
+	h4 {
+		font-size: 2.2rem;
+		font-family: $font_3;
+		margin-bottom: 1.2rem;
+		@include bp($point_2) {
+			margin-bottom: 0.5rem;
+			font-size: 2rem;
+		}
+	}
+}
+.aboutService_item_txt {
+	p {
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
+		a {
+			color: $orange;
+			font-family: $font_4;
+			@include bp($point_2) {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+.aboutGallery {
+}
+.aboutGallery_main {
+
+	text-align: center;
+	h3 {
+		margin-bottom: 6rem;
+		text-align: left;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
+	}
+	margin-bottom: 15.2rem;
+	@include bp($point_2) {
+		margin-bottom: 8rem;
+	}
+}
+.aboutGallery_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+	grid-gap: 3rem;
+	margin-bottom: 7rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+		grid-gap: 1rem;
+	}
+	li {
+		height: 34.8rem;
+		border-radius: 3rem;
+		overflow: hidden;
+		@include bp($point_2) {
+			height: 15rem;
+			border-radius: 1rem;
+		}
+
+		&:nth-child(n+7) {
+			display: none;
+		}
+		img {
+			object-fit: cover;
+		}
+
+		&.is-visible {
+			display: block;
+		}
+	}
+}
+.aboutGallery_item {
+}
+.aboutGallery_btn {
+	display: inline-flex;
+	justify-content: center;
+
+	&.hidden {
+		display: none;
+	}
+}
+.btn-standart {
+}
+.btn-icon {
+}
+.icon {
+}
+.icon-arrow-right {
+}
+.reviews {
+	
+}
+.reviews_main_wrapper {
+	margin-bottom: 15rem;
+	@include bp($point_2) {
+		margin-bottom: 8rem;
+	}
+}
+.reviews_main_head {
+	@include flex-space;
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+}
+.reviews_main_nav {
+	@include flex-start;
+
+	@include bp($point_2) {
+		display: none;
+	}
+	
+	div {
+		width: 10.1rem;
+		height: 7.6rem;
+		@include flex-center;
+		background-color: $orange;
+		color: $white;
+		border-radius: $gl_radius;
+		overflow: hidden;
+		transition: all .3s ease;
+		&:first-child {
+			margin-right: 2.1rem;
+		}
+		button {
+			color: $white;
+			@include flex-center;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		
+	}
+	.swiper-button-disabled {
+		background-color: #D9D9D9;
+		pointer-events: none;
+	}
+}
+.reviewsPrev {
+}
+.icon-prev {
+}
+.reviewsNext {
+}
+.icon-next {
+}
+.reviews_slider {
+	margin-bottom: 8.6rem!important;
+	@include bp($point_2) {
+		margin-bottom: 3rem!important;
+	}
+}
+.reviews_main_slider {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50%;
+		content: '';
+		background: rgba(74, 74, 74, 0.1);
+		filter: blur(20rem);
+		@include bp($point_2) {
+			height: 100%;
+		}
+	}
+	.section_in {
+		margin-right: 0;
+		max-width: 172rem;
+	}
+}
+.reviews_slide {
+	@include flex-start;
+	background: #FFFFFF;
+	// box-shadow: 0 .4rem 12.2rem rgba(74, 74, 74, 0.17);
+	border-radius: 3rem;
+	padding: 5rem 6.1rem 5.5rem 4rem;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+		padding: 2rem;
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.reviews_slide_img {
+	width: 10.6rem;
+	height: 10.6rem;
+	@include flex-center;
+	min-width: 10.6rem;
+	border-radius: $gl_radius;
+	margin-right: 3rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+		margin-right: 0;
+	}
+	img {
+		object-fit: cover;
+	}
+}
+.reviews_slide_content {
+	max-width: 62.9rem;
+}
+.reviews_slide_txt {
+	margin-bottom: 3rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+	p {
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+			@include bp($point_2) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+.reviews_slide_name {
+	p {
+		font-size: 2.2rem;
+		font-family: $font_3;
+		@include bp($point_2) {
+			font-size: 1.8rem;
+		}
+	}
+}
+.aboutAction {
+	background-color: $dark;
+}
+.aboutAction_main {
+	@include flex-start;
+	color: $white;
+	padding: 5.8rem 0 10.2rem 0;
+	margin-bottom: 12rem;
+	@include bp($point_2) {
+		padding: 6rem 0;
+		margin-bottom: 8rem;
+	}
+}
+.aboutACtion_form_wrapper {
+	max-width: 67.8rem;
+	margin-right: 7.8rem;
+	@include bp($point_2) {
+		margin-right: 0;
+	}
+
+	h4 {
+		margin-bottom: 5rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+.aboutAction_form {
+}
+.aboutAction_input {
+	margin-bottom: 2rem;
+	input {
+		@include inputs;
+	}
+}
+.aboutAction_input_check {
+
+	margin: 1rem 0 6rem 0;
+	@include bp($point_2) {
+		margin: 1rem 0 4rem 0;
+	}
+	input {
+		display: none;
+		&:checked + label:after {
+			transform: scale(1);
+		}
+	}
+	label {
+		position: relative;
+		font-size: 1.8rem;
+		@include flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+		padding-left: 4rem;
+		line-height: 2rem;
+		cursor: pointer;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
+		&:before {
+			width: 2.5rem;
+			height: 2.5rem;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 0.5rem;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: .4rem;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			left: .4rem;
+			top: 1.1rem;
+			width: 1.7rem;
+			height: 1.2rem;
+			background-image: url('../../i/global/check.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: scale(0);
+			transition: all .3s ease;
+		}
+		a {
+			font-size: 1.8rem;
+			color: $white;
+			border-bottom: .1rem solid $white;
+			@include bp($point_2) {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+.aboutAction_btn {
+	@include btn-input;
+}
+.action_btn_icon {
+}
+.aboutAction_img {
+	width: 74.9rem;
+	@include bp($point_2) {
+		display: none;
+	}
+}
+.faq {
+}
+.faq_main {
+}
+.faq_head {
+	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+}
+.faq_list {
+}
+
+.faq_item_icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 3.4rem;
+	width: 6.1rem;
+	height: 6.1rem;
+	@include flex-center;
+	background-color: $dark;
+	border-radius: $gl_radius;
+	transition: all .3s ease;
+	@include bp($point_2) {
+		width: 3rem;
+		height: 3rem;
+	}
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-image: url('../../i/global/plus.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		content: '';
+		width: 3.7rem;
+		height: 3.7rem;
+		transition: all .3s ease;
+		@include bp($point_2) {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -60%);
+		background-image: url('../../i/global/minus.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		content: '';
+		width: 3.7rem;
+		height: .3rem;
+		transition: all .3s ease;
+		@include bp($point_2) {
+			width: 1.5rem;
+			opacity: 0;
+		}
+	}
+}
+
+
+.faq_item {
+	margin-bottom: 3rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+	cursor: pointer;
+	
+	&.active_mod {
+
+		h6 {
+			color: $orange;
+		}
+		.faq_item_icon {
+			background-color: $orange;
+			&:before {
+				opacity: 0;
+				transform: translate(-50%, -60%);
+			}
+			&:after {
+				opacity: 1;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}
+.faq_item_head {
+	background: $white;
+	box-shadow: 0px .4rem 12.2rem rgba(74, 74, 74, 0.17);
+	border-radius: 3rem;
+	padding: 3.4rem 4.5rem;
+	position: relative;
+	@include bp($point_2) {
+		padding: 2rem 8rem 2rem 2rem;
+		border-radius: 1rem;
+	}
+}
+.faq_item_title {
+	h6 {
+		font-size: 2.2rem;
+		transition: all .3s ease;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.faq_item_content {
+	display: none;
+	padding-left: 4.5rem;
+	padding-top: 3rem;
+	@include bp($point_2) {
+		padding-top: 1rem;
+		padding-left: 2rem;
+	}
+	p, ul {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+			@include bp($point_2) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+	li {
+		position: relative;
+		padding-left: 3rem;
+		@include bp($point_2) {
+			padding-left: 2rem;
+		}
+		&:before {
+			content: '';
+			width: .5rem;
+			height: .5rem;
+			background-color: $orange;
+			border-radius: 100%;
+			left: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			@include bp($point_2) {
+				left: 0;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+.faq_item_txt {
+}

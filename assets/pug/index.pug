@@ -1,0 +1,177 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
+block content_block
+	section.hero
+		.section_in
+			.hero_main_row
+				.hero_main_content
+					.hero_main_txt
+						h1!='Аренда ямобура <span>без посредников</span>'
+						p Предоставим качественную технику под различные виды бурения
+					.hero_btn_row
+						.hero_action_shop.btn-standart
+							a(href="#")
+								p В каталог
+								.btn-icon
+						.hero_action_form.trigger_form
+							button Оставить заявку
+				.hero_main_img
+					+pic({
+						png: true,
+						img: 'i/home/hero',
+						media: 1024,
+						img_mob: 'i/home/hero'
+					})
+	section.home_about.sec_anim
+		.section_in
+			.homeAbout_main_wrapper
+				.homeAbout_img_wrapper
+					.homeAbout_img_big.el_anim
+						+pic({
+							img: 'i/home/about_big',
+						})
+					.homeAbout_img_small.el_anim
+						+pic({
+							img: 'i/home/about_small',
+							png: true,
+						})
+				.homeAbout_content.el_anim
+					h2!='ПроСвет <span>Магистраль</span>'
+					.homeAbout_content_txt 
+						p Наша компания предоставляет в аренду ямобуры для разных целей. Доставка техники происходит на запланированную дату и время.
+						p Работаем по всей территории Санкт-Петербурга, Ленинградской области, также при необходимости возможен выезд в другие регионы.
+					.homeAbout_link.btn-standart
+						a(href="#")
+							p В каталог
+							.btn-icon
+	section.paralaxSection.sec_anim 
+		.section_in 
+			.service_paralax 
+				.serviceParalax_content.el_anim 
+					h3!='Почему <span>мы?</span>'
+					p Предлагаем комплексное решение от профессионалов своего дела!
+				.service_paralax_wrapper 
+					.service_paralaxBig_img
+						+pic({
+							img: 'i/home/paralax',
+							png: true,
+						})
+					ul.service_paralax_imgs
+						-for(i = 0; i < 7; i++)
+							- var srcParalax = 'i/home/stoune_' + i + '.png'
+								if i === 0
+									li.paralax_el.paralaxEl(data-ratio=`0.1`)
+										img(src=srcParalax, alt="")
+								else 
+									li.paralax_el.paralaxEl(data-ratio=`0.${i}`)
+										img(src=srcParalax, alt="")
+				ul.tootipe_list 
+					-for(i = 0; i < 4; i++)
+						li(class=`tooltipe_number${i}`).tolltipe_wrapper_item
+							.tooltipe_trigger
+							.tolltipe_content 
+								p Надежно
+								span Собственный автопарк, аренда без посредников.
+	section.tehnic.sec_anim 
+		.tehnic_head_wrapper 
+			.section_in
+				.tehnic_head.el_anim
+					.tehnic_title 
+						h3!='Большой выбор техники под <span>любые задачи!</span>'
+					.tenick_nav.navigation_slider 
+						.tehnic_btn.prev 
+							button 
+								+icon('prev')
+						.tehnic_btn.next 
+							button 
+								+icon('next')
+		.tehnic_slider_wrapper 
+			.tehnic_slider.swiper 
+				.swiper-wrapper
+					-for(i = 0; i < 6; i++) 
+						.swiper-slide.el_anim
+							.tehnic_slide_wrapper 
+								.tehnic_slide_img(style="background: url('/i/home/tehnic.jpg')")
+									a(href="/") 
+								.tehnic_slide_content 
+									h3 Ямобур на базе экскаватора
+									span от 20 000 руб
+									.tehnic_slide_link
+										a(href="#")
+											p Подробнее
+											.btn-icon
+				.tehnic_slide_pag
+	section.dservice.sec_anim 
+		.section_in 
+			.dservice_main_wrapper 
+				.dservice_head.el_anim 
+					h4!='Наши основные <span>услуги:</span>'
+				.dservice_main
+					.dservice_main_rate 
+						ul.dservice_list 
+							each item in ['Бурение лидерных скважин;', 'Бурение скважин под сваи;', 'Бурение лунок;', 'Бурение скважин под столбы;', 'Бурение скважин под фундамент;', 'Бурение ям.']
+								li.dservice_list_item.el_anim
+									a(href="#")
+										.dservice_item_icon 
+											+icon('checks')
+										p=item
+						.dservice_link.btn-standart.el_anim
+							a(href="#")
+								p Все услуги
+								.btn-icon
+					.dservice_main_videos.el_anim 
+						a(href="https://www.youtube.com/watch?v=JoqgSPoWhMs&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMJoqgSPoWhMs&start_radio=1" data-fancybox="media").dservice_video_trigger
+							+icon('play')
+	section.action 
+		.section_in 
+			.action_main 
+				.action_form_row 
+					.action_title_w 
+						h4!='Возьмите ямобур в аренду от 10 смен и <span>получите скидку!</span>'
+					.action_form_w 
+						.action-form
+							.action_input 
+								input(type="text" placeholder="Ваше имя")
+							.action_input 
+								input(type="tel" placeholder="Ваш телефон")
+							.action_check 
+								input(type="checkbox" id="action" name="action" checked)
+								label(for="action")!='Отправляя информацию, вы соглашаетесь <a href="/privacy_policy">c политикой конфиденциальности.</a>'
+							.action_input_btn 
+								input(type="submit" value="Оставить заявку")
+								.btn-icon
+				.action_gallery_row.paralaxSection
+					ul.action_gallery_list
+						-for(i = 0; i < 3; i++)
+							- var galleryImg = 'i/home/gallery_' + i;
+									li.gallery_item_img.paralaxEl(data-ratio=`0.1${i}`)
+										+pic({
+											img: `${galleryImg}`,
+											png: true,
+										})
+								
+	section.oservice.sec_anim 
+		.section_in 
+			.oservice_main 
+				.oservice_img
+					+pic({
+						img: 'i/home/oservice'
+					})
+				.oservice_main_list
+					h3.el_anim!='Дополнительные <span>услуги:</span>' 
+					ul.dservice_list 
+							each item in ['Бурение лидерных скважин;', 'Бурение скважин под сваи;', 'Бурение лунок;', 'Бурение скважин под столбы;', 'Бурение скважин под фундамент;', 'Бурение ям.']
+								li.dservice_list_item.el_anim
+									a(href="#")
+										.dservice_item_icon 
+											+icon('checks')
+										p=item
+					.dservice_link.btn-standart.el_anim
+						a(href="#")
+							p Все услуги
+							.btn-icon
+				
+
+					

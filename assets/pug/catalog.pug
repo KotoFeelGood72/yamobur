@@ -1,0 +1,13 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'CATALOG'}
+block content_block
+	+bread(['Главная'], 'Каталог', title='Каталог <span>техники</span>', titleToggle=true)
+	section.catalog 
+		.section_in 
+			.catalog_main_wrapper 
+				ul.product_grid 
+					-for(i = 0; i < 5; i++)
+						li.products_item_wrapper 
+							+products

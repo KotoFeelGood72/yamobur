@@ -1,0 +1,39 @@
+.breadcrumb {
+	padding-top: 2.5rem;
+	@include bp($point_2) {
+		padding-top: 1.5rem;
+	}
+}
+.section_in {
+}
+.breadcrumb_main {
+}
+.breadcrumb__list {
+	@include flex-start;
+	font-size: 1.8rem;
+	@include bp($point_2) {
+		font-size: 1.2rem;
+	}
+	li {
+		color: #202020;
+		opacity: .6;
+		a {
+			color: #202020;
+			&:hover {
+				color: $orange;
+			}
+		}
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				padding: 0 .4rem;
+			}
+		}
+	}
+}
+.breadcrumb__item {
+}
+.breadcrumb__link {
+}
+.breadcrumb__link-current {
+}

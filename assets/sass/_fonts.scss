@@ -1,0 +1,7 @@
+@include font_face('Gilroy-Regular', 'Gilroy-Regular', $font_path, 400);
+//
+@include font_face('Gilroy-Medium', 'Gilroy-Medium', $font_path, 500);
+//
+@include font_face('Gilroy-Semibold', 'Gilroy-Semibold', $font_path, 600);
+//
+@include font_face('Gilroy-Bold', 'Gilroy-Bold', $font_path, 700);

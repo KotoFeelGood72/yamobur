@@ -1,0 +1,94 @@
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+}
+
+h1 {
+	font-size: 5.5rem;
+	font-family: $font_4;
+	@include bp($point_2) {
+		font-size: 2.6rem;
+	}
+
+	span {
+		color: $orange;
+	}
+}
+// End
+h2 {
+	font-size: 4.5rem;
+	font-family: $font_3;
+	@include bp($point_2) {
+		font-size: 2.4rem;
+	}
+	span {
+		color: $orange;
+	}
+}
+// End
+h3 {
+	font-size: 4.5rem;
+	font-family: $font_3;
+
+	@include bp($point_2) {
+		font-size: 2.4rem;
+	}
+
+	span {
+		color: $orange;
+	}
+
+}
+// End
+h4 {
+	font-size: 4.5rem;
+	font-family: $font_3;
+	@include bp($point_2) {
+		font-size: 2.4rem;
+	}
+	span {
+		color: $orange;
+	}
+
+}
+// End
+h5 {
+	font-size: 4.5rem;
+	font-family: $font_3;
+
+	@include bp($point_2) {
+		font-size: 2.4rem;
+	}
+
+	span {
+		color: $orange;
+	}
+
+}
+// End
+h6 {
+
+	span {
+		color: $orange;
+	}
+
+}
+// End
+
+.standart-btn {
+	@include btn-standart;
+}
+
+a {
+	transition: all .3s ease;
+}
+
+.btn-standart {
+	@include btn-standart;
+}
+
+.fancybox__thumbs {
+	display: none;
+}

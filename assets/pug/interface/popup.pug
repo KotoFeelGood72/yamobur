@@ -1,0 +1,53 @@
+.popup_form 
+	.popup_bg.close_popups 
+	.popup_form_main 
+		.popup_form_close.close_popups 
+			+icon('closes')
+		.popup_form_head 
+			h3!='Оставьте свои <span>контакты</span>'
+			p Мы свяжемся с вами в ближайшее время!
+		.popup_form_action 
+			.popup_form_input 
+				input(type="text" placeholder="Ваше имя")
+			.popup_form_input 
+				input(type="tel" placeholder="Ваш телефон")
+			.popup_form_check 
+				input(type="checkbox", name="checkPopup" id="checkPopup" checked)
+				label(for="checkPopup")!='Отправляя информацию, вы соглашаетесь c <a target="_blank" href="/privacy-policy">политикой конфиденциальности.</a>'
+			.popup_form_btn 
+				input(type="submit" value="Оставить заявку")
+				.action_btn_icon.btn-icon
+
+.popup_burger 
+	.popup_burger_bg.closer_burger 
+	.popup_burger_main
+		.close_burger.closer_burger
+			+icon('closes') 
+		.popup_burger_logo 
+			a(href="#")
+				+pic({
+					img: 'i/global/logo_footer_mobile',
+					png: true
+				})
+		.popup_burger_nav 
+			nav 
+				ul 
+					each item in ['Главная', 'Каталог', 'Услуги', 'Доставка', 'О нас', 'Контакты']
+						li 
+							a(href="#")=item 
+		.popup_burger_info 
+			ul 
+				each item, i in ['+7 931-999-77-00', 'ooopsm2020@gmail.com', 'Ленинградская область, Всеволожский район, д. Порошкино, Строительная площадка 5-А. ТЦ Мега Парнас']
+					if i < 2
+						li 
+							a(href="#")=item 
+					else
+						li 
+							span=item 
+		ul.footer_social_list.popup_form_social
+			each item in ['vk', 'tg', 'ws']
+				li.footer_social_item 
+					a(href="#")
+						+pic({
+							img: `i/global/${item}`
+						})

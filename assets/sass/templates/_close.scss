@@ -1,0 +1,98 @@
+.close {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  width: 37rem;
+  height: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+	@include z-index(popup);
+  @include bp($point_2) {
+    width: 100%;
+    bottom: 2rem;
+    right: auto;
+    left: auto;
+    @include flex-center;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .close_main {
+      transform: translateY(0);
+    }
+    .checkmark_close {
+      animation: fills .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    }
+    .icon-path {
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+    .close__circle {
+      animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+  }
+}
+.close_main {
+  background-color: #f5f5f5;
+  padding: 2rem 4rem;
+  border-radius: .5rem;
+  @include flex-start;
+  transform: translateY(-2rem);
+  transition: all .3s ease;
+	p {
+		margin-right: .7rem;
+	}
+}
+
+
+.close__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 0;
+  stroke-width: 0;
+  stroke-miterlimit: 10;
+  stroke: #C91313;
+  fill: none;
+}
+
+.checkmark_close {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #C91313;
+  @include bp($point_2) {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.icon-path {
+  transform-origin: 50% 50%;
+	stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fills {
+  100% {
+    box-shadow: inset 0px 0px 0px 3rem #C91313;
+  }
+}

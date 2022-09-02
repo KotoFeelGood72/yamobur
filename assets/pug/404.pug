@@ -1,0 +1,14 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'404'}
+block content_block
+	+bread(['Главная'], 'Ошибка 404', title='Ошибка  <span>404</span>', titleToggle=true)
+	section.eror 
+		.section_in 
+			.eror_main 
+				p Кажется, что-то пошло не так! Страница не найдена или обновляется.
+				.eror_link.btn-standart
+					a(href="/")
+						p На главную
+						.btn-icon

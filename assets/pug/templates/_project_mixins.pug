@@ -1,0 +1,61 @@
+mixin other_block(data)
+	section.other.sec_anim
+		.section_in 
+			.other_main_head.el_anim 
+				.other_title 
+					h4=data.title
+				.other_nav 
+					.otherPrev
+						button
+							+icon('prev')
+					.otherNext
+						button 
+							+icon('next')
+			.other_main_body 
+				.other_slider.swiper 
+					.swiper-wrapper
+						-for(i = 0; i < 12; i++)
+							.swiper-slide 
+								.other_slide.el_anim
+									+products
+				.other_pag
+
+
+mixin products(data)
+	.products_item
+		.products_item_img
+			a(href="#")  
+				+pic({
+					img: 'i/catalog/products',
+				})
+		.product_item_content 
+			.products_item_title
+				a(href="#")  
+					h3 Ямобур AICHI D-705 на базе КАМАЗ 4326 (вездеход)
+			.products_item_price 
+				span от 20 000 руб.
+			.products_item_link 
+				a(href="#")
+					p Подробнее
+					.products_item_icon.btn-icon 
+						+icon('arrow')
+
+
+mixin parent(data)
+	li.parent_item_cat 
+		h3=data.title 
+		ul.child_list_cat
+			-for(i = 0; i < 6; i++) 
+					li.child_list_item 
+						.child_item_img
+							a(href="#")  
+								+pic({
+									img: 'i/catalog/products'
+								})
+						.child_item_content 
+							h4 Бурение лидерных скважин
+							span от 20 000 руб.
+							.child_item_link 
+								a(href="#")
+									p подробнее
+									.child_link_icon.btn-icon

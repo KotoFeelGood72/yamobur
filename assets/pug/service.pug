@@ -1,0 +1,19 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'SERVICE'}
+block content_block
+	+bread(['Главная'], 'Услуги', title='Наши <span>услуги</span>', titleToggle=true)
+	section.service 
+		.section_in 
+			.service_main_wrapper 
+				ul.serviceParent_list 
+					+parent({
+						title: 'Бурение скважин'
+					})
+					+parent({
+						title: 'Установка столбов'
+					})
+					+parent({
+						title: 'Другие услуги'
+					})

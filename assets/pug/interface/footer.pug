@@ -1,0 +1,50 @@
+footer.footer 
+	.section_in 
+		.footer_main_head
+			.footer_main_col 
+				.footer_logo 
+					a(href="#")
+						+pic({
+							img: 'i/global/logo_footer',
+							png: true,
+							media: 1024,
+							img_mob: 'i/global/logo_footer_mobile'
+						})
+				.footer_social_row 
+					ul.footer_social_list
+						each item in ['vk', 'tg', 'ws']
+							li.footer_social_item 
+								a(href="#")
+									+pic({
+										img: `i/global/${item}`
+									})
+			.footer_contacts_col 
+				ul.footer_contact_list
+					li.footer_contacts_item 
+						a(href="#")
+							.footer_item_icon 
+								+icon('phone')
+							p +7 931-999-77-00 
+					li.footer_contacts_item 
+						a(href="#")
+							.footer_item_icon 
+								+icon('mail')
+							p ooopsm2020@gmail.com
+			.footer_address_col 
+				.footer_addres_icon 
+					+icon('marker')
+				.footer_address_txt 
+					p Ленинградская область, Всеволожский район, д. Порошкино, Строительная площадка 5-А. ТЦ Мега Парнас
+		.footer_bottom
+			.footer_bottom_col
+				.footer_copyright © 2022 Все права защищены
+				.footer_policy 
+					a(href="#") Политика конфиденциальности
+			.footer_arkada_link 
+				a(href="#")
+					p Разработано arkada-web.ru
+					.footer_arkada_logo 
+						+pic({
+							img: 'i/global/favicon',
+							png: true,
+						})

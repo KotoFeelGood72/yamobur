@@ -1,0 +1,103 @@
+//------------------------------------------------------------base styles
+:root {
+	--full-screen: calc(var(--vh, 1vh) * 100);
+}
+
+html {
+	height: 100%;
+	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	scroll-behavior: smooth;
+	user-select: none;
+	@include bp($point_2) {
+		font-size: 10px;
+	}
+}
+
+body {
+	position: relative;
+	display: flex;
+
+	height: 100%;
+	font-size: $font_size_base;
+	@include bp($point_2) {
+		font-size: 1.6rem;
+	}
+
+	color: $color_text_base;
+	-webkit-text-size-adjust: none;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $body_bg;
+
+	&.active {
+		overflow: hidden;
+	}
+
+	@supports (display: grid) {
+		display: block;
+	}
+}
+
+.wrapper {
+	position: relative;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+
+	overflow-x: hidden;
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	padding: $header 0 0;
+
+	flex: 1 0 auto;
+	@include bp($point_2) {
+		padding: $header_mob 0 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $color_link_base;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+}
+
+.widget_list {
+	padding: 0 1rem;
+	li {
+		@include link;
+		padding: 0!important;
+		margin-bottom: 1rem;
+		border-bottom: .1rem solid rgba(255, 255, 255, 0.233);
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:before {
+			border-bottom: .1rem solid #C91313;
+			bottom: -.1rem;
+		}
+	}
+	a {
+		text-transform: uppercase!important;
+		font-family: $font_1!important;
+		text-decoration: none!important;
+		transition: all .3s ease;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}
+
+//------------------------------------------------------------base styles###

@@ -1,0 +1,80 @@
+.catalog {
+}
+.section_in {
+}
+.catalog_main_wrapper {
+}
+.product_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(35.5rem, 1fr));
+	grid-gap: 4rem 3rem;
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+
+
+
+}
+.products_item_wrapper {
+}
+.products_item {
+	background: $white;
+	box-shadow: 0px .4rem 12.2rem rgba(74, 74, 74, 0.17);
+	border-radius: 4rem;
+	padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+
+		&:hover {
+			.products_item_img {
+				img {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		h3, span {
+			font-size: 2rem;
+			text-transform: uppercase;
+			font-family: $font_2;
+			font-weight: 500;
+			margin-bottom: 1.5rem;
+			@include bp($point_2) {
+				font-size: 1.8rem;
+				text-transform: none;
+				max-width: 25rem;
+			}
+		}
+		span {
+			display: flex;
+			margin-bottom: 2.5rem;
+			text-transform: none;
+			@include bp($point_2) {
+				margin-bottom: 2rem;
+			}
+		}
+}
+.products_item_img {
+	margin-bottom: 2rem;
+	width: 100%;
+	border-radius: 4rem;
+	overflow: hidden;
+	img {
+		transition: all .7s ease
+	}
+}
+.cover_img {
+}
+.product_item_content {
+}
+.products_item_title {
+}
+.products_item_price {
+}
+.products_item_link {
+	@include btns;
+}
+.products_item_icon {
+}
+.icon {
+}
+.icon-arrow {
+}

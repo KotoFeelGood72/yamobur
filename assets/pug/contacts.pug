@@ -1,0 +1,56 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'CONTACTS'}
+block content_block
+	+bread(['Главная'], 'Наши контакты', title='Наши <span>контакты</span>', titleToggle=true)
+	section.contacts 
+		.section_in 
+			.contacts_main_wrapper 
+				.contacts_main_head 
+					ul.contacts_list_info 
+						-
+							var info = [
+								{
+									label: 'Телефон:',
+									link: '+7 931-999-77-00',
+									icon: 'tel'
+								},
+								{
+									label: 'Эл. почта:',
+									link: 'ooopsm2020@gmail.com',
+									icon: 'email'
+								},
+								{
+									label: 'Адрес:',
+									txt: 'Ленинградская область, Всеволожский район, д. Порошкино, Строительная площадка 5-А. ТЦ Мега Парнас',
+									icon: 'markers'
+								}
+							]
+						each item in info 
+							li.contacts_info_item
+								if item.link 
+									.contacts_item_head 
+										.contacts_item_icon 
+											+icon(item.icon)
+										.contacts_item_label 
+											p=item.label 
+									.contacts_item_body 
+										a(href="#")=item.link 
+								else
+									.contacts_item_head 
+										.contacts_item_icon 
+											+icon(item.icon)
+										.contacts_item_label 
+											p=item.label 
+									.contacts_item_body 
+										span=item.txt
+					ul.contacts_social_list 
+						each item in ['vk_black', 'tg', 'ws']
+							li.contacts_social_item 
+								a(href="#")
+									+pic({
+										img: `i/global/${item}`,
+									})
+				.contacts_main_body 
+					#map

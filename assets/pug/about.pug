@@ -1,0 +1,122 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'CATALOG'}
+block content_block
+	+bread(['Главная'], 'О нашей компании', title='О нашей <span>компании</span>', titleToggle=true)
+	section.about 
+		.section_in 
+			.about_main
+				.about_content 
+					.about_txt 
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+						p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+						p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+				.about_img_w 
+					ul
+						each item in ['about_main_big', 'about_main_small']
+							li 
+								+pic({
+									img: `i/home/${item}`
+								})
+	section.aboutService 
+		.section_in 
+			.aboutService_main 
+				h2 Как мы работаем
+				ul.aboutService_list 
+					-for(i = 0; i < 3; i++)
+						li.aboutService_item 
+							.about_service_content 
+								h4 Заявка и уточнение
+								.aboutService_item_txt 
+									p!='Определяем перечень работ и стоимость. Оставьте заявку на сайте или звоните <a target="_blank" href="/">+7 931-999-77-00</a>'
+	section.aboutGallery 
+		.section_in 
+			.aboutGallery_main 
+				h3 Фотогалерея
+				ul.aboutGallery_list 
+					-for(i = 0; i < 12; i++)
+						li.aboutGallery_item 
+							a(href="i/global/gallery.jpg" data-fancybox="gallery")
+								+pic({
+									img: `i/global/gallery`
+								}) 
+				.aboutGallery_btn.btn-standart
+					a(href="#")
+						p Показать больше
+						.btn-icon
+	section.reviews 
+			.reviews_main_wrapper 
+				.reviews_head 
+					.section_in 
+						.reviews_main_head 
+							h4 Отзывы клиентов
+							.reviews_main_nav 
+								.reviewsPrev
+									button  
+										+icon('prev')
+								.reviewsNext
+									button  
+										+icon('next')
+				.reviews_main_slider
+					.section_in 
+						.reviews_slider.swiper 
+							.swiper-wrapper
+								-for(i = 0; i < 8; i++) 
+									.swiper-slide 
+										.reviews_slide 
+											.reviews_slide_img 
+												+pic({
+													img: 'i/global/reviews'
+												})
+											.reviews_slide_content 
+												.reviews_slide_txt 
+													p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+													p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+												.reviews_slide_name 
+													p Андрей Петрович
+				.reviews__pagWrapper 
+					.section_in 
+						.rev_slide_pag
+	section.aboutAction 
+		.section_in 
+			.aboutAction_main 
+				.aboutACtion_form_wrapper 
+					h4!='Не знаете, что выбрать? Оставьте заявку, и мы <span>поможем!</span>'
+					.aboutAction_form 
+						.aboutAction_input 
+							input(type="text" placeholder="Ваше имя")
+						.aboutAction_input 
+							input(type="tel" placeholder="Ваш телефон")
+						.aboutAction_input_check 
+							input(type="checkbox" id="aboutAction" name="aboutAction" checked)
+							label(for="aboutAction")!='Отправляя информацию, вы соглашаетесь c <a target="_blank" href="/privacy_policy">политикой конфиденциальности.<a>' 
+						.aboutAction_btn 
+							input(type="submit" value="Оставить заявку")
+							.action_btn_icon.btn-icon
+				.aboutAction_img 
+					+pic({
+						img: 'i/global/desktop',
+						png: true,
+					})
+	section.faq 
+		.section_in 
+			.faq_main 
+				.faq_head 
+					h4 Ответы на частые вопросы
+				.faq_main
+					ul.faq_list 
+						-for(i = 0; i < 4; i++)
+							li.faq_item 
+								.faq_item_head 
+									.faq_item_title
+										h6 Возможна ли работа в пост-оплату?
+									.faq_item_icon 
+								.faq_item_content 
+									.faq_item_txt 
+										p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+										ul 
+											li Мы работаем только в 100% предоплату
+											li Мы работаем только в 100% предоплату
+											li Мы работаем только в 100% предоплату

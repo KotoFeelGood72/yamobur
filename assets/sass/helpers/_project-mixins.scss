@@ -1,0 +1,333 @@
+
+// Сброс стилей input
+@mixin app {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	font-family: $font_1;
+	font-size: $font_size_base;
+}
+
+// Input end
+
+
+// Flex styles
+
+@mixin flex-center {
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-col {
+	flex-direction: column;
+}
+
+@mixin flex-start {
+	justify-content: flex-start;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-space {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-end {
+	justify-content: flex-end;
+	display: flex;
+	align-items: center;
+}
+
+// End flex styles
+
+// Style default link
+
+
+@mixin link {
+	position: relative;
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		content: '';
+		border-bottom: .2rem solid $orange;
+		transition: all .3s ease;
+		pointer-events: none;
+	}
+	&:hover {
+		color: $orange;
+		&:before {
+			width: 100%;
+		}
+	}
+	&.active {
+		color: $orange;
+		&:before {
+			width: 100%;
+		}
+	}
+}
+
+// End style link
+
+// Btn global
+
+@mixin btn-standart {
+	@include bp($point_2) {
+		width: 100%
+	}
+	a {
+		@include flex-center;
+		background-color: $orange;
+		border-radius: $gl_radius;
+		padding: 2.5rem 7rem;
+		@include bp($point_2) {
+			padding: 1.5rem 5rem;
+			width: 100%;
+		}
+
+		p {
+			font-size: 2.2rem;
+			text-transform: uppercase;
+			margin-right: 2.5rem;
+			color: $white;
+			font-family: $font_3;
+			@include bp($point_2) {
+				font-size: 1.6rem;
+				margin-right: 0;
+			}
+		}
+		.btn-icon {
+			width: 3rem;
+			color: $white;
+			@include flex-center;
+			transition: all .3s ease;
+			position: relative;
+			// overflow: hidden;
+			height: 2.2rem;
+			overflow: hidden;
+			@include bp($point_2) {
+				display: none;
+			}
+			&:before,
+			&:after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2.4rem;
+				height: 100%;
+				background-image: url('../../i/global/arrow.svg');
+				background-size: contain;
+				content: '';
+				transition: all .3s ease;
+			}
+			&:after {
+				transform: translateX(-5rem);
+			}
+		}
+
+		&:hover {
+			background-color: #CE4600;
+
+			.btn-icon {
+				&:before {
+					transform: translateX(5rem);
+				}
+				&:after {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+
+
+
+@mixin btns {
+	a {
+		@include flex-start;
+		p {
+			font-size: 2.2rem;
+			text-transform: uppercase;
+			margin-right: 2.5rem;
+			color: $orange;
+			font-family: $font_3;
+			@include bp($point_2) {
+				font-size: 1.6rem;
+			}
+		}
+		.btn-icon {
+			width: 3rem;
+			color: $white;
+			@include flex-center;
+			transition: all .3s ease;
+			position: relative;
+			// overflow: hidden;
+			height: 2.2rem;
+			overflow: hidden;
+			@include bp($point_2) {
+				width: 2.4rem;
+				height: 1.5rem;
+			}
+			&:before,
+			&:after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2.4rem;
+				height: 100%;
+				background-image: url('../../i/global/arrow-orange.svg');
+				background-size: contain;
+				content: '';
+				transition: all .3s ease;
+				background-repeat: no-repeat;
+				@include bp($point_2) {
+					width: 2rem;
+				}
+			}
+			&:after {
+				transform: translateX(-5rem);
+			}
+		}
+
+		&:hover {
+
+			.btn-icon {
+				&:before {
+					transform: translateX(5rem);
+				}
+				&:after {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@mixin btn-input {
+	position: relative;
+	min-width: 36.7rem;
+	background-color: $orange;
+	@include flex-center;
+	border-radius: $gl_radius;
+	display: inline-flex;
+	@include bp($point_2) {
+		min-width: 100%;
+	}
+	.btn-icon {
+		width: 3rem;
+		color: $white;
+		@include flex-center;
+		transition: all .3s ease;
+		position: absolute;
+		top: 50%;
+		right: 6rem;
+		transform: translateY(-50%);
+		// overflow: hidden;
+		height: 2.2rem;
+		overflow: hidden;
+		@include bp($point_2) {
+			display: none;
+		}
+		&:before,
+		&:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2.4rem;
+			height: 100%;
+			background-image: url('../../i/global/arrow.svg');
+			background-size: contain;
+			content: '';
+			transition: all .3s ease;
+		}
+		&:after {
+			transform: translateX(-5rem);
+		}
+	}
+	input {
+		@include flex-start;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		margin-right: 2.5rem;
+		color: $white;
+		font-family: $font_3;
+		@include app;
+		width: 100%;
+		flex-grow: 1;
+		padding: 2.5rem 6rem;
+		padding-right: 0;
+		cursor: pointer;
+		@include bp($point_2) {
+			padding: 1.7rem 5rem;
+			margin-right: 0;
+			font-size: 1.6rem;
+			justify-content: center;
+		}
+	}
+	&:hover {
+
+		.btn-icon {
+			&:before {
+				transform: translateX(5rem);
+			}
+			&:after {
+				transform: translateX(0);
+			}
+		}
+	}
+}
+
+@keyframes animationArrow {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(5rem);
+		opacity: 0;
+	}
+}
+
+@mixin inputs {
+	@include app;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 1rem;
+	padding: 2.1rem 3rem;
+	font-size: 2rem;
+	color: $white;
+	font-family: $font_1;
+	width: 100%;
+	@include bp($point_2) {
+		padding: 1.5rem 3rem;
+		font-size: 1.6rem;
+	}
+	&:-ms-input-placeholder {
+		color: $white;
+		transition: all .3s ease;
+	}
+	&::-webkit-input-placeholder {
+		color: $white;
+		transition: all .3s ease;
+	}
+
+	&:focus {
+		&:-ms-input-placeholder {
+			color: $white;
+			opacity: .3;
+		}
+		&::-webkit-input-placeholder {
+			color: $white;
+			opacity: .3;
+		}
+	}
+}
