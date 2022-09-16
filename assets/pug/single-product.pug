@@ -12,10 +12,11 @@ block content_block
 						.swiper-wrapper
 							-for(i = 0; i < 5; i++) 
 								.swiper-slide 
-									.product_slide_img 
-										+pic({
-											img: 'i/catalog/products'
-										})
+									.product_slide_img
+										a(href="i/catalog/products.jpg" data-fancybox="gallery")  
+											+pic({
+												img: 'i/catalog/products'
+											})
 					.product_slider_pug
 				.single_products_content 
 					.single_products_title 

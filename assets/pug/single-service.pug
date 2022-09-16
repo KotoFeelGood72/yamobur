@@ -30,7 +30,7 @@ block content_block
 					ul 
 						each item in ['services_1', 'services_2']
 							li 
-								a(href=`i/catalog/${item}.jpg`)
+								a(href=`i/catalog/${item}.jpg` data-fancybox="service")
 									+pic({
 										img: `i/catalog/${item}`
 									})
